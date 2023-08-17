@@ -1,6 +1,6 @@
-import {Component, ElementRef, ViewChild} from '@angular/core';
-import {Observable} from "rxjs";
-import {Store} from "@ngrx/store";
+import { Component, ElementRef, ViewChild } from '@angular/core';
+import { Observable } from "rxjs";
+import { Store } from "@ngrx/store";
 import {
   LoadAnnotationsError,
   LoadAnnotationsSuccess,
