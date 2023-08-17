@@ -45,10 +45,7 @@ export class AppComponent {
       (annotationsData: any) => {
         this.annotationsData = JSON.parse(annotationsData.message)[0];
 
-        console.log(this.annotationsData)
-
         this.store.dispatch(LoadAnnotationsSuccess({ annotations: this.annotationsData }));
-
         this.renderCanvas(this.imageData, this.annotationsData)
       },
       (error) => {
@@ -61,9 +58,6 @@ export class AppComponent {
     const canvas: HTMLCanvasElement = this.canvasEl.nativeElement;
     const ctx: CanvasRenderingContext2D = <CanvasRenderingContext2D>canvas.getContext('2d');
 
-    console.log('image', image)
-    console.log('annotations', annotation)
-
     // Clear the canvas
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
@@ -73,7 +67,7 @@ export class AppComponent {
     img.onload = () => {
       ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
 
-      // Draw annotations
+      // Draw annotation
       ctx.strokeStyle = 'red';
       ctx.lineWidth = 2;
       ctx.beginPath();
